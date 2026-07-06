@@ -5,17 +5,19 @@ public:
         int right=numbers.size()-1;
         while(left<right){
             int sum=numbers[left]+numbers[right];
-            if(sum==target){
+            if(sum==target)
                 return {left+1,right+1};
-            }
-            if(sum<target){
+            if(sum<target)
                 left++;
-            }
-            else{
+            else
                 right--;
-            }
-            
         }
         return {};
     }
-};
+      /*NOTES:
+      this is a classic two pointer 
+      sorted, no duplicates , unique solution 
+      so just put left,right pointers 'if sum == target return left ,right 
+      if less increase left as we fall short if not decrease right that's it */
+
+    };
