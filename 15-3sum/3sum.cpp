@@ -1,44 +1,27 @@
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
-
         vector<vector<int>> ans;
-
         sort(nums.begin(), nums.end());
-
         for (int i = 0; i < nums.size() - 2; i++) {
-
-            // Skip duplicate fixed elements
             if (i > 0 && nums[i] == nums[i - 1])
                 continue;
-
             int left = i + 1;
             int right = nums.size() - 1;
-
             while (left < right) {
-
                 int sum = nums[i] + nums[left] + nums[right];
-
                 if (sum == 0) {
-
                     ans.push_back({nums[i], nums[left], nums[right]});
-
                     left++;
                     right--;
-
-                    // Skip duplicate left values
                     while (left < right && nums[left] == nums[left - 1])
                         left++;
-
-                    // Skip duplicate right values
                     while (left < right && nums[right] == nums[right + 1])
                         right--;
                 }
-
                 else if (sum < 0) {
                     left++;
                 }
-
                 else {
                     right--;
                 }
@@ -47,10 +30,10 @@ public:
 
         return ans;
     }
-    //this is a 3rd model two pointer sum fix one pointer and put two others at two ends and move them to get target value 
-    //time complexity:
-    // sorting:O(nlog n)
-    // loops:O(n^2)
-    // overall:O(n^2)
-    //Space complexity:O(1)
+    /*this is a 3rd model two pointer sum fix one pointer and put two others at two ends and move them to get target value 
+    time complexity:
+    sorting:O(nlog n)
+    loops:O(n^2)
+    overall:O(n^2)
+    Space complexity:O(1)*/
 };
