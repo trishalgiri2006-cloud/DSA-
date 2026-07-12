@@ -24,6 +24,10 @@ public:
             left++;    
             ans=max(ans,count);
         }
-        return ans; 
+        return ans;
+        /*first a subarray of k size and cal its count of vowels
+        after that go on adding each ele and deleting left element if ele adding is vowel count++ and ele leaving is vowel count-- 
+        by doing this we will get the count og array 
+        now find max of prev subarrays and this and return it */ 
     }
 };
